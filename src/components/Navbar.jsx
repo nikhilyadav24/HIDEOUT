@@ -27,7 +27,7 @@ const Navbar = () => {
           <h2 class="m-4 cursor-pointer font-normal text-gray-600 hover:text-gray-900"><Link to={"/share"}>Share</Link></h2>
           <h2 class="m-4 cursor-pointer font-normal text-gray-600 hover:text-gray-900"><Link to={"/shared"}>Shared Places</Link></h2>
           <h2 class="m-4 cursor-pointer font-normal text-gray-600 hover:text-gray-900"><Link to={"/about"}>About</Link></h2>
-          <h2 class="m-4 cursor-pointer font-normal text-gray-600 hover:text-gray-900"><Link to={"/pool"}>Pool</Link></h2>
+          {/* <h2 class="m-4 cursor-pointer font-normal text-gray-600 hover:text-gray-900"><Link to={"/pool"}>Pool</Link></h2> */}
           <button class="mt-2 h-11 rounded-full bg-primary px-7 font-semibold text-white"><Link to={"/"}>Get Started</Link></button>
           {/* <img src="https://i.ibb.co/2FbV2vm/Ellipse.png" alt="profile picture" class="mr-3 h-10 w-10 rounded-full" /> */}
         </div>

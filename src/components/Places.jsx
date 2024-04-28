@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { data } from '../data/data.js';
+import { Link } from 'react-router-dom';
 
 const Places = () => {
   //   console.log(data);
@@ -14,11 +15,11 @@ const Places = () => {
     );
   };
 
-  //   Filter by price
-  const filterPrice = (price) => {
+  //   Filter by Rating
+  const filterRating = (Rating) => {
     setPlace(
       data.filter((item) => {
-        return item.price === price;
+        return item.rating === Rating;
       })
     );
   };
@@ -42,25 +43,25 @@ const Places = () => {
               All
             </button>
             <button
-              onClick={() => filterType('burger')}
+              onClick={() => filterType('Nature')}
               className='m-1 border-primary text-primary hover:bg-primary hover:text-white'
             >
               Nature
             </button>
             <button
-              onClick={() => filterType('pizza')}
+              onClick={() => filterType('Beaches')}
               className='m-1 border-primary text-primary hover:bg-primary hover:text-white'
             >
               Beaches
             </button>
-            <button
-              onClick={() => filterType('salad')}
+            {/* <button
+              onClick={() => filterType('Temples')}
               className='m-1 border-primary text-primary hover:bg-primary hover:text-white'
             >
               Temples
-            </button>
+            </button> */}
             <button
-              onClick={() => filterType('chicken')}
+              onClick={() => filterType('Cities')}
               className='m-1 border-primary text-primary hover:bg-primary hover:text-white'
             >
               Cities
@@ -68,30 +69,30 @@ const Places = () => {
           </div>
         </div>
 
-        {/* Filter Price */}
+        {/* Filter Rating */}
         <div>
           <p className='font-bold text-gray-700'>Ratings</p>
           <div className='flex justify-between max-w-[390px] w-full'>
             <button
-              onClick={() => filterPrice('*')}
+              onClick={() => filterRating('*')}
               className='m-1 border-primary text-primary hover:bg-primary hover:text-white'
             >
               *
             </button>
             <button
-              onClick={() => filterPrice('**')}
+              onClick={() => filterRating('**')}
               className='m-1 border-primary text-primary hover:bg-primary hover:text-white'
             >
               **
             </button>
             <button
-              onClick={() => filterPrice('***')}
+              onClick={() => filterRating('***')}
               className='m-1 border-primary text-primary hover:bg-primary hover:text-white'
             >
               ***
             </button>
             <button
-              onClick={() => filterPrice('****')}
+              onClick={() => filterRating('****')}
               className='m-1 border-primary text-primary hover:bg-primary hover:text-white'
             >
               ****
@@ -103,6 +104,7 @@ const Places = () => {
       {/* Display Place */}
       <div className='grid  lg:grid-cols-3 gap-10 pt-10'>
         {place.map((item, index) => (
+          <Link to={`/places/${item.id}`}>
           <div
             key={index}
             className='border shadow-lg rounded-lg hover:scale-105 duration-300'
@@ -116,7 +118,7 @@ const Places = () => {
               <p className='font-bold'>{item.name}</p>
               <p>
                 <span className='bg-primary text-white p-1 rounded-full'>
-                  {item.price}
+                  {item.rating}
                 </span>
               </p>
             </div>
@@ -124,6 +126,7 @@ const Places = () => {
               <p className='font'>{item.description}</p>
             </div>
           </div>
+          </Link>
         ))}
       </div>
     </div>

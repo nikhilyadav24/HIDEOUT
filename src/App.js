@@ -9,7 +9,8 @@ import Footer from './components/Footer'
 import Home from './components/Home';
 import Share from './components/Share';
 import About from './components/About';
-import Pool from './components/Pool';
+import DestinationDetails from './components/DestinationDetails';
+
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
             <Route path="/share" element={<Share />} />
             <Route path="/places" element={<Places />} /> 
             <Route path="/about" element={<About />} /> 
-            <Route path="/pool" element={<Pool />} /> 
+            <Route exact path="/places/:id" element={<DestinationDetails />} /> 
           </Routes>
         <Footer />
     </Router>
